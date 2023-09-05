@@ -37,7 +37,7 @@ string[] FilterArray(string[] inputArray)
 
     for (int i = 0; i < inputArray.Length; i++)
     {
-        if (IsStringLengthLessOrEqual3(inputArray[i]))
+        if (inputArray[i].Length <= 3)
         {
             resultArray[resultCount] = inputArray[i];
             resultCount++;
@@ -51,11 +51,6 @@ string[] FilterArray(string[] inputArray)
     }
 
     return finalArray;
-}
-
-bool IsStringLengthLessOrEqual3(string input)
-{
-    return input.Length <= 3;
 }
 
 string[] GetInputArray()
