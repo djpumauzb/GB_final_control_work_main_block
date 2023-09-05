@@ -3,12 +3,31 @@
 // строк, длина которых меньше, либо равна 3 символам. Первоначальный массив можно
 // ввести с клавиатуры, либо задать на старте выполнения алгоритма. При решении не
 // рекомендуется пользоваться коллекциями, лучше обойтись исключительно массивами.
-
-string[] GetInputArray()
+void PrintArray(string[] input, string[] result)
 {
-    Console.WriteLine("Введите элементы массива, разделяя их пробелами:");
-    string input = Console.ReadLine();
-    return input.Split(' ');
+    Console.Write("[");
+    for (int i = 0; i < input.Length; i++)
+    {
+        Console.Write("\"" + input[i] + "\"");
+        if (i < input.Length - 1)
+        {
+            Console.Write(", ");
+        }
+    }
+    Console.Write("]");
+
+    Console.Write(" => ");
+
+    Console.Write("[");
+    for (int i = 0; i < result.Length; i++)
+    {
+        Console.Write("\"" + result[i] + "\"");
+        if (i < result.Length - 1)
+        {
+            Console.Write(", ");
+        }
+    }
+    Console.WriteLine("]");
 }
 
 string[] FilterArray(string[] inputArray)
@@ -39,31 +58,11 @@ bool IsStringLengthLessOrEqual3(string input)
     return input.Length <= 3;
 }
 
-void PrintArray(string[] input, string[] result)
+string[] GetInputArray()
 {
-    Console.Write("[");
-    for (int i = 0; i < input.Length; i++)
-    {
-        Console.Write("\"" + input[i] + "\"");
-        if (i < input.Length - 1)
-        {
-            Console.Write(", ");
-        }
-    }
-    Console.Write("]");
-
-    Console.Write(" => ");
-
-    Console.Write("[");
-    for (int i = 0; i < result.Length; i++)
-    {
-        Console.Write("\"" + result[i] + "\"");
-        if (i < result.Length - 1)
-        {
-            Console.Write(", ");
-        }
-    }
-    Console.WriteLine("]");
+    Console.WriteLine("Введите элементы массива, разделяя их пробелами:");
+    string input = Console.ReadLine();
+    return input.Split(' ');
 }
 
 string[] inputArray = GetInputArray();
